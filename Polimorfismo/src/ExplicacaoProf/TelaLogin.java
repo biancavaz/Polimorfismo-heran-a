@@ -29,18 +29,19 @@ public class TelaLogin {
 		
 		// agrupar componentes:
 		Object[] componentes = {usuario, txUsuario, senha, txSenha};
-		//JPanel painel = new JPanel (); 
-		//painel.setLayout(new GridLayout(2,2));
-		//painel.add(usuario);
-		//painel.add(txUsuario);
-		//painel.add(senha);
-		//painel.add(txSenha);
+		JPanel painel = new JPanel (); 
+		painel.setLayout(new GridLayout(2,2));
+		painel.add(usuario);
+		painel.add(txUsuario);
+		painel.add(senha);
+		painel.add(txSenha);
 		
 		
 		// criar janela 
 		JOptionPane.showInternalMessageDialog(null, componentes);
+	
+		Cliente cliente = new Cliente ("bianca_vaz", "6758");// login e senha tem que ser exatamente igual 
 		
-		Cliente cliente = new Cliente ();
 		if (cliente.verficarLogin(txUsuario.getText(), new String(txSenha.getPassword()))) {
 			JOptionPane.showMessageDialog(null, "Login realizado com sucessesfull");
 		}

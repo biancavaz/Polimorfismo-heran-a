@@ -5,6 +5,7 @@ public class Cliente {
 	private String login="teste";
 	private String senha="123";
 	
+
 	public boolean verficarLogin (String login, String senha){
 		if (login.equals(this.login) &&  senha.equals(this.senha))
 			return true; 
@@ -29,4 +30,9 @@ public class Cliente {
 		this.senha = senha;
 	}
 
+	public Cliente (String login, String senha) {
+		setLogin(login);
+		setSenha(senha);
+	}
+	
 }
