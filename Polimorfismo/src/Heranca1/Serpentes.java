@@ -1,5 +1,7 @@
 package Heranca1;
 
-public class Serpentes {
+public class Serpentes extends Reptil {
+	
+	private String tiposLingua;
 
 }

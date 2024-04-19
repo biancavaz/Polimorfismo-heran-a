@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Aguia {
+public class Aguia extends AvesRapina {
 
 }

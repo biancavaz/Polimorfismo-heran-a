@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Macaco {
+public class Macaco extends Primate {
 
 }

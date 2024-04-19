@@ -1,5 +1,7 @@
 package Heranca1;
 
-public class Reptil {
+public class Reptil extends Animal {
+	
+
 
 }

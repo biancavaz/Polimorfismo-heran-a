@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Falcao {
+public class Falcao extends AvesRapina {
 
 }

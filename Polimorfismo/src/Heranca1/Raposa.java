@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Raposa {
+public class Raposa extends Canino {
 
 }

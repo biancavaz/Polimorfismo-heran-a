@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Anaconda {
+public class Anaconda extends Serpentes {
 
 }

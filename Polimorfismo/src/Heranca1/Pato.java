@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Pato {
+public class Pato extends AvesAquaticas {
 
 }

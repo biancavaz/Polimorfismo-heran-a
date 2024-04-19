@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class SapoVenenoso {
+public class SapoVenenoso extends Sapos{
 
 }

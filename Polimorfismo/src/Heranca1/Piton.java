@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class Piton {
+public class Piton extends Serpentes {
 
 }

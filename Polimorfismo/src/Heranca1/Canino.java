@@ -1,5 +1,8 @@
 package Heranca1;
 
-public class Canino {
+public class Canino extends Mamifero {
+	
+	private String tamanhoDente;
+	
 
 }

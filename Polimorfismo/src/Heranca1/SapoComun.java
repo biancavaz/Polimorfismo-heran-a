@@ -1,5 +1,5 @@
 package Heranca1;
 
-public class SapoComun {
+public class SapoComun extends Sapos {
 
 }

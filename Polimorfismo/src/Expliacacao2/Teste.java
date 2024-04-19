@@ -7,6 +7,11 @@ public class Teste {
 	doguinho.setNome("fifi");
 	doguinho.latir();
 	
+	Animal bicho;
+	bicho = new Cachorro ();
+	bicho.setNome("Doguinho");
+	((Cachorro)bicho).latir();
+	
 	
 	}
 }
