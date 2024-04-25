@@ -53,8 +53,7 @@ public class MotorEletrico extends ProdutosWeg{
 	}
 
 	public void setPotenciaSaida(double potenciaSaida) {
-		
 		this.potenciaSaida = potenciaSaida;
 	}
-
+	
 }
