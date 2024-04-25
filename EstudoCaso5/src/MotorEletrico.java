@@ -8,8 +8,8 @@ public class MotorEletrico extends ProdutosWeg{
 	
 	public MotorEletrico (int codigo, String tipo, String tipoEnrolamento, double eficiencia) {
 		super (codigo, tipo);
-		this.tipoEnrolamento = tipoEnrolamento; 
-		this.eficiencia = eficiencia;
+		setTipoEnrolamento (tipoEnrolamento); 
+		setEficiencia (eficiencia);
 	}
 
 	public String getTipoEnrolamento() {

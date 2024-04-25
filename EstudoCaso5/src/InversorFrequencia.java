@@ -12,18 +12,20 @@ public class InversorFrequencia extends ProdutosWeg{
 	}
 
 	public int getCapacidadeFrequencia() {
-		return capacidadeFrequencia;
+		return this.capacidadeFrequencia;
 	}
 
 	public void setCapacidadeFrequencia(int capacidadeFrequencia) {
+		if (capacidadeFrequencia >0)
 		this.capacidadeFrequencia = capacidadeFrequencia;
 	}
 
 	public int getNumFases() {
-		return numFases;
+		return this.numFases;
 	}
 
 	public void setNumFases(int numFases) {
+		if (numFases > 0)
 		this.numFases = numFases;
 	}
 	
