@@ -16,11 +16,12 @@ public class Weg {
 	
 	int opcao;
 	
-	 
+	do {
 	System.out.println(" Interface de gerenciamento "+
 	"\n1- Cadastrar Motor Elétrico "+
 	"\n2- Cadastrar Inversor Frequencia "+
-	"\n3- Cadastrar Gerador");
+	"\n3- Cadastrar Gerador"+
+	"\n0- Sair do sistema ");
 	opcao = sc.nextInt();	 
 	
 	switch (opcao) {
@@ -112,8 +113,45 @@ public class Weg {
 		break; // acaba o caso 2
 		
 	case 3:
+		System.out.println("\n -- Cadastro do Gerador ");
+		System.out.println("Insira o código do gerador:");
+		gerador1.setCodigo(sc.nextInt());
+		//falta a validação
+		System.out.println("Insira o tipo de gerador: ");
+		gerador1.setTipo(sc.next());
+		//fazer a validaçao
+		System.out.println("Insira a Autonomia do gerador:");
+		gerador1.setAutonomia(sc.nextInt());
+		// fazer a validação
+		System.out.println("Insira a Capacidade do gerador:");
+		gerador1.setCapacidade(sc.next());
+		//fazer a validação
+		System.out.println("Insira a qual o conbustível do gerador: :");
+		gerador1.setCombustivel(sc.next());
+		// fazer a validação
+		System.out.println("Insira a potencia do gerador:");
+		gerador1.setPotencia(sc.nextDouble());
+		// fazer a validação
+		System.out.println("Insira a tensao do gerador:");
+		gerador1.setTensao(sc.nextDouble());
+		// fazer a validação
+		System.out.println("Insira o preço do gerador:");
+		gerador1.setPreco(sc.nextDouble());
 		
+		// fazer o array list e mostrar(mesmos esquemas do motor e inversor)
 		
-		}
+		System.out.println(" Gerador (n°) cadastrado: ");
+		System.out.println(" Código:" + gerador1.getCodigo());
+		System.out.println(" Tipo: "+ gerador1.getTipo());
+		System.out.println(" Potencia: "+ gerador1.getPotencia());
+		System.out.println(" Tensão: "+ gerador1.getTensao());
+		System.out.println(" Capacidade: "+ gerador1.getCapacidade());
+		System.out.println(" Autonomia: "+ gerador1.getAutonomia());
+		System.out.println(" Combuistível: "+ gerador1.getCombustivel());
+		System.out.println(" Preço: "+ gerador1.getPreco());
+		break; // acaba o caso 3 
+		
+			}
+		} while (opcao !=0);
 	}
 }
