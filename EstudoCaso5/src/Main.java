@@ -11,7 +11,7 @@ public class Main {
 		Scanner sc = new Scanner (System.in);
 		ProdutosWeg produtosWeg1 = new ProdutosWeg (56890, "Motor");
 		
-		MotorEletrico motor = new MotorEletrico( 56, "lalal", "lelel", 45);
+		MotorEletrico motor = new MotorEletrico( 56, "lalal", 45);
 		motor.setVelocidade(50);
 		System.out.println(motor.getVelocidade());
 		

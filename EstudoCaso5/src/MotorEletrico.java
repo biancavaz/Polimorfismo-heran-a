@@ -6,9 +6,8 @@ public class MotorEletrico extends ProdutosWeg{
 	private double velocidade; // Velocidade atual em RPM
 	private double potenciaSaida;
 	
-	public MotorEletrico (int codigo, String tipo, String tipoEnrolamento, double eficiencia) {
-		super (codigo, tipo);
-		setTipoEnrolamento (tipoEnrolamento); 
+	public MotorEletrico (int codigo, String tipo, double eficiencia) {
+		super (codigo, tipo); 
 		setEficiencia (eficiencia);
 	}
 
