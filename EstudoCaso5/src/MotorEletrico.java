@@ -10,24 +10,31 @@ public class MotorEletrico extends ProdutosWeg{
 		super (codigo, tipo); 
 		setEficiencia (eficiencia);
 	}
+	
+	public MotorEletrico (int codigo) {
+		super(codigo);
+	}
 
 	public String getTipoEnrolamento() {
 		return tipoEnrolamento;
 	}
 
-	public void setTipoEnrolamento(String tipoEnrolamento) {
-		if(tipoEnrolamento.matches(".*[a-z].*"))
+	public boolean setTipoEnrolamento(String tipoEnrolamento) {
+		if(tipoEnrolamento.matches(".*[a-z].*")) {
 		this.tipoEnrolamento = tipoEnrolamento;
+		return true;
+		} return false;
 	}
 
 	public double getEficiencia() {
 		return eficiencia;
 	}
 
-	public void setEficiencia(double eficiencia) {
-		
-		if (eficiencia > 0)
+	public boolean setEficiencia(double eficiencia) {
+		if (eficiencia > 0) {
 			this.eficiencia = eficiencia;
+			return true;
+		} return false;
 	}
 	
 	public double calculareficiencia (double potencia, double potenciaSaida) {
@@ -42,9 +49,11 @@ public class MotorEletrico extends ProdutosWeg{
 		return velocidade;
 	}
 
-	public void setVelocidade(double velocidade) {
-		if (velocidade > 0) 
+	public boolean setVelocidade(double velocidade) {
+		if (velocidade > 0) {
 		this.velocidade = velocidade;
+		return true;
+		} return false;
 	}
 
 	public double getPotenciaSaida() {

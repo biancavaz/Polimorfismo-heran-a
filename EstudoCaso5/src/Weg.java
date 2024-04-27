@@ -7,150 +7,229 @@ public class Weg {
 		Scanner sc = new Scanner (System.in);
 		
 	
-	ArrayList<String> listaDeProdutos = new ArrayList<>();
-	ArrayList<String> listaServicoManutencao = new ArrayList<>();
-	
-	MotorEletrico m1 = new MotorEletrico( 1234, "lala", 60 );
-	InversorFrequencia inversor1 = new InversorFrequencia (345, "hahaha", 56);
-	Gerador gerador1 = new Gerador (789, "kakkaa", 48);
+	ArrayList<Gerador> listaDeGeradores = new ArrayList<>();
+	ArrayList<MotorEletrico> listaDeMotores = new ArrayList<>();
+	ArrayList<InversorFrequencia> listaDeInversores = new ArrayList<>();
+	ArrayList<ServicoManutencao> listaServicoManutencao = new ArrayList<>();
 	
 	int opcao;
 	
 	do {
+		
+		MotorEletrico m1 = new MotorEletrico( 1234, "lala", 60 );
+		InversorFrequencia inversor1 = new InversorFrequencia (345, "hahaha", 56);
+		Gerador gerador1 = new Gerador (789, "kakkaa", 48);
+		
 	System.out.println(" Interface de gerenciamento "+
+	"\n0 Sair do sistema "+
 	"\n1- Cadastrar Motor Elétrico "+
 	"\n2- Cadastrar Inversor Frequencia "+
 	"\n3- Cadastrar Gerador"+
-	"\n0- Sair do sistema ");
+	"\n4- Listar Motores Eletricos"+
+	"\n5- Listar Inversores de Frequencia "+
+	"\n6- Listar Geradores ");
 	opcao = sc.nextInt();	 
 	
 	switch (opcao) {
 	case 1:
+		listaDeMotores.add(new MotorEletrico(listaDeMotores.size()));
+		int b = listaDeMotores.size()-1;
 		System.out.println("\n-- Cadastro do Motor Eletrico");
-		System.out.println("\nInsira o código do motor: ");
-		m1.setCodigo(sc.nextInt());
-		// precisa fazer a validação
-		System.out.println("Insira o tipo do motor: ");
-		m1.setTipo(sc.next());
-		// fazer validação 
+		
+		do {
+		System.out.println("\nInsira o tipo do motor: ");
+		if(listaDeMotores.get(b).setTipo(sc.next()) == true)
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a potencia do motor:");
-		m1.setPotencia(sc.nextDouble());
-		// fazer a validação
+		if (listaDeMotores.get(b).setPotencia(sc.nextDouble())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a eficiencia do motor: ");
-		m1.setEficiencia(sc.nextDouble());
-		// fazer validação
+		if (listaDeMotores.get(b).setEficiencia(sc.nextDouble())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a velocidade do motor ");
-		m1.setVelocidade(sc.nextDouble());
-		// fazer a validação
+		if (listaDeMotores.get(b).setVelocidade(sc.nextDouble())== true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a tensão do motor:");
-		m1.setTensao(sc.nextDouble());
-		// fazer a validação 
+		if (listaDeMotores.get(b).setTensao(sc.nextDouble())==true);
+		break;
+		}while (true);
+		
+		do {
 		System.out.println("Insira a capacidade do motor:");
-		m1.setCapacidade(sc.next());
-		//fazer a validação
+		if (listaDeMotores.get(b).setCapacidade(sc.next())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira o tipo de enrolamento do motor: ");
-		m1.setTipoEnrolamento(sc.next ());
-		// fazer validação
+		if (listaDeMotores.get(b).setTipoEnrolamento(sc.next ())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira o preço do Motor:");
-		m1.setPreco(sc.nextDouble());
-	
-		
-		// colocar o motor no array list, e talves fazer um for para conseguir cadastrar vários motores,
+		if (listaDeMotores.get(b).setPreco(sc.nextDouble())== true);
+		break;
+		} while (true);
+
 		// tambem precisa fazer o calculo da eficiencia do motor e apresentar. 
-		// no final do cadastro mostrar todas as informações cadastradas. (feito)
-		// tavez fazer um for com a quantidade de motores que serão cadastrados, e pedir ao usuario essa qauntidade, ai talvez tenha ue ser um vetor.
-		
-		System.out.println(" Motor (n°) cadastrado: ");
-		System.out.println(" Código:" + m1.getCodigo());
-		System.out.println(" Tipo: "+ m1.getTipo());
-		System.out.println(" Potencia: "+ m1.getPotencia());
-		System.out.println(" Eficiencia: "+ m1.getEficiencia());
-		System.out.println(" Velocidade: "+ m1.getVelocidade());
-		System.out.println(" Tensão: "+ m1.getTensao());
-		System.out.println(" Capacidade: "+ m1.getCapacidade());
-		System.out.println(" Tipo de Enrolamento: "+ m1.getTipoEnrolamento());
-		System.out.println(" Preço: "+ m1.getPreco());
 		break; // acabou o caso 1
 		
 	case 2:
+		listaDeInversores.add(new InversorFrequencia(listaDeInversores.size()));
+		int a = listaDeInversores.size()-1;
 		System.out.println("\n-- Cadastro do Inversor de frequencia");
-		System.out.println("Insira o código do Inversor: ");
-		inversor1.setCodigo(sc.nextInt());
-		// fazer a validação
-		System.out.println("Insira o tipo de Inversor:");
-		inversor1.setTipo(sc.next());
-		//fazer a validação
+		
+		do {
+		System.out.println("\nInsira o tipo de Inversor:");
+		if (listaDeInversores.get(a).setTipo(sc.next()) == true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a potencia do inversor: ");
-		inversor1.setPotencia(sc.nextDouble());
-		//fazer a validação
+		if (listaDeInversores.get(a).setPotencia(sc.nextDouble())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a tensão do inversor: ");
-		inversor1.setTensao(sc.nextDouble());
-		//fazer a validação 
+		if (listaDeInversores.get(a).setTensao(sc.nextDouble())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a capacidde do inversor:");
-		inversor1.setCapacidade(sc.next());
-		//fazer a validação
+		if (listaDeInversores.get(a).setCapacidade(sc.next())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a capacidade de frequencia do Inversor: ");
-		inversor1.setCapacidade(sc.next());
-		// fazer a validação
+		if (listaDeInversores.get(a).setCapacidade(sc.next())==true);
+		break;
+		} while(true);
+		
+		do {
 		System.out.println("Insira o numero de fases do Inversor: ");
-		inversor1.setNumFases(sc.nextInt());
-		//fazer a validação
+		if (listaDeInversores.get(a).setNumFases(sc.nextInt())==true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira o preço do inversor de frequencia: ");
-		inversor1.setPreco(sc.nextDouble());
-		// fazer a validação
+		if (listaDeInversores.get(a).setPreco(sc.nextDouble()) == true);
+		break;
+		} while (true);
 		
-		// fazer a validação de todos; mesma ideias do motor.
-		
-		System.out.println(" Inversor de Frequencia (n°) cadastrado: ");
-		System.out.println(" Código:" + inversor1.getCodigo());
-		System.out.println(" Tipo: "+ inversor1.getTipo());
-		System.out.println(" Potencia: "+ inversor1.getPotencia());
-		System.out.println(" Tensão: "+ inversor1.getTensao());
-		System.out.println(" Capacidade: "+ inversor1.getCapacidade());
-		System.out.println(" Capacidade de frequencia: "+ inversor1.getCapacidadeFrequencia());
-		System.out.println(" Número de fases: "+ inversor1.getNumFases());
-		System.out.println(" Preço: "+ inversor1.getPreco());
 		break; // acaba o caso 2
 		
 	case 3:
+		listaDeGeradores.add(new Gerador(listaDeGeradores.size()));
+		int i = listaDeGeradores.size()-1;
 		System.out.println("\n -- Cadastro do Gerador ");
-		System.out.println("Insira o código do gerador:");
-		gerador1.setCodigo(sc.nextInt());
-		//falta a validação
-		System.out.println("Insira o tipo de gerador: ");
-		gerador1.setTipo(sc.next());
-		//fazer a validaçao
+		
+		do {
+		System.out.println("\nInsira o tipo de gerador: ");
+		if (listaDeGeradores.get(i).setTipo(sc.next()) == true)
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a Autonomia do gerador:");
-		gerador1.setAutonomia(sc.nextInt());
-		// fazer a validação
+		if (listaDeGeradores.get(i).setAutonomia(sc.nextInt()) == true)
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a Capacidade do gerador:");
-		gerador1.setCapacidade(sc.next());
-		//fazer a validação
+		if (listaDeGeradores.get(i).setCapacidade(sc.next())== true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a qual o conbustível do gerador: :");
-		gerador1.setCombustivel(sc.next());
-		// fazer a validação
+		if (listaDeGeradores.get(i).setCombustivel(sc.next())== true);
+		break;
+		} while (true);
+		
+		do {
 		System.out.println("Insira a potencia do gerador:");
-		gerador1.setPotencia(sc.nextDouble());
-		// fazer a validação
+		if (listaDeGeradores.get(i).setPotencia(sc.nextDouble()) == true);
+		break;
+		} while (true); 
+		
+		do {
 		System.out.println("Insira a tensao do gerador:");
-		gerador1.setTensao(sc.nextDouble());
-		// fazer a validação
+		if (listaDeGeradores.get(i).setTensao(sc.nextDouble())== true);
+		break;
+		} while (true); 
+		
+		do {
 		System.out.println("Insira o preço do gerador:");
-		gerador1.setPreco(sc.nextDouble());
-		
-		// fazer o array list e mostrar(mesmos esquemas do motor e inversor)
-		
-		System.out.println(" Gerador (n°) cadastrado: ");
-		System.out.println(" Código:" + gerador1.getCodigo());
-		System.out.println(" Tipo: "+ gerador1.getTipo());
-		System.out.println(" Potencia: "+ gerador1.getPotencia());
-		System.out.println(" Tensão: "+ gerador1.getTensao());
-		System.out.println(" Capacidade: "+ gerador1.getCapacidade());
-		System.out.println(" Autonomia: "+ gerador1.getAutonomia());
-		System.out.println(" Combuistível: "+ gerador1.getCombustivel());
-		System.out.println(" Preço: "+ gerador1.getPreco());
+		if (listaDeGeradores.get(i).setPreco(sc.nextDouble())== true);
+		break;
+		} while (true); 
+
 		break; // acaba o caso 3 
 		
+	case 4: 
+		for ( int cont=0; cont<listaDeMotores.size(); cont++) {
+			
+			System.out.println(" Motor (n°) cadastrado: ");
+			System.out.println(" Código:" + listaDeMotores.get(cont).getCodigo());
+			System.out.println(" Tipo: "+ listaDeMotores.get(cont).getTipo());
+			System.out.println(" Potencia: "+ listaDeMotores.get(cont).getPotencia());
+			System.out.println(" Eficiencia: "+ listaDeMotores.get(cont).getEficiencia());
+			System.out.println(" Velocidade: "+ listaDeMotores.get(cont).getVelocidade());
+			System.out.println(" Tensão: "+ listaDeMotores.get(cont).getTensao());
+			System.out.println(" Capacidade: "+ listaDeMotores.get(cont).getCapacidade());
+			System.out.println(" Tipo de Enrolamento: "+ listaDeMotores.get(cont).getTipoEnrolamento());
+			System.out.println(" Preço: "+ listaDeMotores.get(cont).getPreco());
+			System.out.println("_______________________________________________________________");
+		} break;
+		
+	case 5:
+		for ( int cont=0; cont<listaDeInversores.size(); cont++) {
+			System.out.println(" Inversor de Frequencia (n°) cadastrado: ");
+			System.out.println(" Código:" + listaDeInversores.get(cont).getCodigo());
+			System.out.println(" Tipo: "+ listaDeInversores.get(cont).getTipo());
+			System.out.println(" Potencia: "+ listaDeInversores.get(cont).getPotencia());
+			System.out.println(" Tensão: "+ listaDeInversores.get(cont).getTensao());
+			System.out.println(" Capacidade: "+ listaDeInversores.get(cont).getCapacidade());
+			System.out.println(" Capacidade de frequencia: "+ listaDeInversores.get(cont).getCapacidadeFrequencia());
+			System.out.println(" Número de fases: "+ listaDeInversores.get(cont).getNumFases());
+			System.out.println(" Preço: "+ listaDeInversores.get(cont).getPreco());
+			System.out.println("_______________________________________________________________");
+		} break;
+		
+	case 6:
+		for ( int cont=0; cont<listaDeGeradores.size(); cont++) {
+			System.out.println(" Gerador (n°) cadastrado: ");
+			System.out.println(" Código:" + listaDeGeradores.get(cont).getCodigo());
+			System.out.println(" Tipo: "+  listaDeGeradores.get(cont).getTipo());
+			System.out.println(" Potencia: "+ listaDeGeradores.get(cont).getPotencia());
+			System.out.println(" Tensão: "+  listaDeGeradores.get(cont).getTensao());
+			System.out.println(" Capacidade: "+  listaDeGeradores.get(cont).getCapacidade());
+			System.out.println(" Autonomia: "+  listaDeGeradores.get(cont).getAutonomia());
+			System.out.println(" Combuistível: "+  listaDeGeradores.get(cont).getCombustivel());
+			System.out.println(" Preço: "+  listaDeGeradores.get(cont).getPreco());
+			System.out.println("_______________________________________________________________");
+		} break;
+		
+		// fazer o serviço de manutencao
 			}
 		} while (opcao !=0);
 	}

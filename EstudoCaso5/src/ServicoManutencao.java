@@ -1,8 +1,9 @@
 
 public class ServicoManutencao {
-	
+	//terminar
 	private String descricao;
 	private double custo;
+	private int codigo;
 	
 	public ServicoManutencao (double custo){
 		setCusto (custo);
