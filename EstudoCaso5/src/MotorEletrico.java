@@ -8,8 +8,8 @@ public class MotorEletrico extends ProdutosWeg{
 	
 	public MotorEletrico (int codigo, String tipo, String tipoEnrolamento, double eficiencia) {
 		super (codigo, tipo);
-		this.tipoEnrolamento = tipoEnrolamento; 
-		this.eficiencia = eficiencia;
+		setTipoEnrolamento (tipoEnrolamento); 
+		setEficiencia (eficiencia);
 	}
 
 	public String getTipoEnrolamento() {
@@ -53,7 +53,7 @@ public class MotorEletrico extends ProdutosWeg{
 	}
 
 	public void setPotenciaSaida(double potenciaSaida) {
-		
+		if (potenciaSaida >0)
 		this.potenciaSaida = potenciaSaida;
 	}
 
