@@ -6,29 +6,42 @@ public class MotorEletrico extends ProdutosWeg{
 	private double velocidade; // Velocidade atual em RPM
 	private double potenciaSaida;
 	
+<<<<<<< HEAD
 	public MotorEletrico (int codigo, String tipo, String tipoEnrolamento, double eficiencia) {
 		super (codigo, tipo);
 		setTipoEnrolamento (tipoEnrolamento); 
 		setEficiencia (eficiencia);
+=======
+	public MotorEletrico (int codigo, String tipo, double eficiencia) {
+		super (codigo, tipo); 
+		setEficiencia (eficiencia);
+	}
+	
+	public MotorEletrico (int codigo) {
+		super(codigo);
+>>>>>>> 1baad9c2011a1418ab9358bd6984d64231c9a621
 	}
 
 	public String getTipoEnrolamento() {
 		return tipoEnrolamento;
 	}
 
-	public void setTipoEnrolamento(String tipoEnrolamento) {
-		if(tipoEnrolamento.matches(".*[a-z].*"))
+	public boolean setTipoEnrolamento(String tipoEnrolamento) {
+		if(tipoEnrolamento.matches(".*[a-z].*")) {
 		this.tipoEnrolamento = tipoEnrolamento;
+		return true;
+		} return false;
 	}
 
 	public double getEficiencia() {
 		return eficiencia;
 	}
 
-	public void setEficiencia(double eficiencia) {
-		
-		if (eficiencia > 0)
+	public boolean setEficiencia(double eficiencia) {
+		if (eficiencia > 0) {
 			this.eficiencia = eficiencia;
+			return true;
+		} return false;
 	}
 	
 	public double calculareficiencia (double potencia, double potenciaSaida) {
@@ -43,9 +56,11 @@ public class MotorEletrico extends ProdutosWeg{
 		return velocidade;
 	}
 
-	public void setVelocidade(double velocidade) {
-		if (velocidade > 0) 
+	public boolean setVelocidade(double velocidade) {
+		if (velocidade > 0) {
 		this.velocidade = velocidade;
+		return true;
+		} return false;
 	}
 
 	public double getPotenciaSaida() {
@@ -53,8 +68,11 @@ public class MotorEletrico extends ProdutosWeg{
 	}
 
 	public void setPotenciaSaida(double potenciaSaida) {
+<<<<<<< HEAD
 		if (potenciaSaida >0)
+=======
+>>>>>>> 1baad9c2011a1418ab9358bd6984d64231c9a621
 		this.potenciaSaida = potenciaSaida;
 	}
-
+	
 }

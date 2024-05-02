@@ -6,10 +6,12 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		int opcao;
+		
 		Scanner sc = new Scanner (System.in);
 		ProdutosWeg produtosWeg1 = new ProdutosWeg (56890, "Motor");
 		
-		MotorEletrico motor = new MotorEletrico( 56, "lalal", "lelel", 45);
+		MotorEletrico motor = new MotorEletrico( 56, "lalal", 45);
 		motor.setVelocidade(50);
 		System.out.println(motor.getVelocidade());
 		
@@ -23,6 +25,12 @@ public class Main {
 		double potenciaSaida = sc.nextInt();
 
 		System.out.println(" o resultado é: "+ motor.calculareficiencia(potencia, potenciaSaida));
+		
+		System.out.println(" Interface de gerenciamento "+
+				" 1- Cadastrar Motor Elétrico "+
+				" 2- Cadastrar Inversor Frequencia "+
+				" 3- Cadastrar Gerador");
+		opcao = sc.nextInt();
 	}
 
 }
