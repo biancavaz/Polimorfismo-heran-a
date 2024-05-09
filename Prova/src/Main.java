@@ -131,6 +131,7 @@ public class Main {
 				System.out.println(" Data: "+ ListaEventos.get(cont).getData());
 				System.out.println(" Localização: "+ ListaEventos.get(cont).getLocalizacao());
 				System.out.println(" Descrição: "+ ListaEventos.get(cont).getDescricao());
+				System.out.println("_______________________________");
 			}
 		break;
 		
@@ -139,6 +140,7 @@ public class Main {
 			for ( int cont=0; cont<usuariosRegistrados.size(); cont++) {
 				System.out.println("Nome: "+ usuariosRegistrados.get(cont).getNome());
 				System.out.println("Email: "+ usuariosRegistrados.get(cont).getEmail() );
+				System.out.println("_______________________________");
 			}
 		break;
 			

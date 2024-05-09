@@ -9,7 +9,7 @@ public class Funcionario {
 		return idade;
 	}
 	public boolean setIdade(int idade) {
-		if( idade > 0 || idade < 150 ) {
+		if( idade > 18 ) {
 			this.idade = idade;
 			return true;
 		} else {
@@ -32,20 +32,18 @@ public class Funcionario {
 	}
 	public boolean setSalario(double salario) {
 		if (salario > 0) {
-			return false;
-		} else {
 			this.salario = salario;
 			return true;
+		} else {
+			return false;
 		}
 	} 
 	
-	public double cacularSalario () {
-		salario = 3500; 
+	public double cacularSalario (double salario ) {
 		return salario; 
 	}
 	
 	public void mostrarInformacoes () {
-		System.out.println();
 				
 	}
 

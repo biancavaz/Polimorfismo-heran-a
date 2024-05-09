@@ -11,7 +11,7 @@ public class Eventos {
 		return titulo;
 	}
 	public boolean setTitulo(String titulo) {
-		if (titulo.length()>5) {
+		if (titulo.length()>=5) {
 		this.titulo = titulo;
 		return true;
 		} return false;
