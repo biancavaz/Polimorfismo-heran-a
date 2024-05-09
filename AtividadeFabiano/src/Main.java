@@ -91,12 +91,14 @@ public class Main {
 				}
 			} while (true);
 			
+			for (int cont =0; cont<listaGerentes.size(); cont++) {
 			System.out.println(" GERENTE ");
 			System.out.println("NOME: "+ gerente1.getNome());
 			System.out.println("IDADE: "+ gerente1.getIdade());
 			System.out.println(" SALÁRIO: "+ gerente1.getSalario());
 			System.out.println("BONUS: "+ gerente1.getBonus());		
-			System.out.println("\n");
+			System.out.println("-----------------------");
+			}
 			
 			break; 
 		
