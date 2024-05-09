@@ -29,9 +29,11 @@ public class Diretor extends Funcionario {
 		return this.acoes;
 	}
 
-	public void setAcoes(double acoes) {
-		if (acoes > 0)
-		this.acoes = acoes;
+	public boolean setAcoes(double acoes) {
+		if (acoes > 0) {
+			this.acoes = acoes;
+			return true;
+		} return false;
 	}
 	
 	

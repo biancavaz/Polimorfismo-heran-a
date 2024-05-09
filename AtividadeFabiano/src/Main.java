@@ -13,6 +13,7 @@ public class Main {
 		Gerente gerente1 = new Gerente(); 
 		
 		ArrayList<Diretor> listaDiretores = new ArrayList<>();
+		ArrayList<Gerente> listaGerentes = new ArrayList<>();
 		
 		do {
 		System.out.println(" Entrar como: \n1- Diretor \n2- Gerente \n0- Sair");
@@ -24,17 +25,33 @@ public class Main {
 			listaDiretores.add(new Diretor());
 			int b = listaDiretores.size()-1; 
 			
+			do {
 			System.out.println("Informe seu nome: ");
-			listaDiretores.get(b).setNome(sc.next());
-			
+			if (listaDiretores.get(b).setNome(sc.next())==true){
+			break;
+				}
+			} while (true); 
+	
+			do {
 			System.out.println("Informe sua idade: ");
-			listaDiretores.get(b).setIdade(sc.nextInt());
-			
+			if (listaDiretores.get(b).setIdade(sc.nextInt())==true){
+				break; 
+				}
+			} while (true);
+			 
+			do {
 			System.out.println("Informe seu salário: ");
-			listaDiretores.get(b).setSalario(sc.nextDouble()); 
+			if (listaDiretores.get(b).setSalario(sc.nextDouble()) ==true) {
+				break; 
+				}
+			}while (true);
 			
+			do {
 			System.out.println("Informe a quantidade de ações: ");
-			listaDiretores.get(b).setAcoes(sc.nextDouble());
+			if (listaDiretores.get(b).setAcoes(sc.nextDouble()) == true) {
+				break;
+				}
+			} while (true); 
 			
 			listaDiretores.get(b).cacularSalario();
 			
@@ -45,19 +62,33 @@ public class Main {
 			System.out.println("AÇÕES: "+ listaDiretores.get(b).getAcoes());
 			System.out.println("SALÁRIO TOTAL: "+listaDiretores.get(b).getTotalSalario());
 			System.out.println("\n");
-			
-			
 			break;
 			
 		case 2:
+			listaGerentes.add(new Gerente());
+			int a = listaGerentes.size()-1; 
+			
+			do {
 			System.out.println("Informe seu nome: ");
-			gerente1.setNome(sc.next());
+			if (gerente1.setNome(sc.next())==true) {
+				break;
+				}
+			} while (true);
 			
+			
+			do {
 			System.out.println("Informe sua idade: ");
-			gerente1.setIdade(sc.nextInt());
+			if(gerente1.setIdade(sc.nextInt())==true);{
+				break;
+				}
+			}while(true);
 			
+			do {
 			System.out.println("Informe seu salário: ");
-			gerente1.setSalario(sc.nextDouble()); 
+			if (gerente1.setSalario(sc.nextDouble())==true) {
+				break;
+				}
+			} while (true);
 			
 			System.out.println(" GERENTE ");
 			System.out.println("NOME: "+ gerente1.getNome());
@@ -67,10 +98,10 @@ public class Main {
 			System.out.println("\n");
 			
 			break; 
-		}
+		
+			}
 		
 		} while (opcao !=0);
-		
 
 	}
 
