@@ -54,14 +54,15 @@ public class Main {
 			} while (true); 
 			
 			listaDiretores.get(b).cacularSalario();
-			
+			for ( int cont=0; cont<listaDiretores.size(); cont++) {
 			System.out.println("\nDIRETOR ");
 			System.out.println("NOME: "+ listaDiretores.get(b).getNome());
 			System.out.println("IDADE: "+ listaDiretores.get(b).getIdade());
 			System.out.println("SALÁRIO: "+ listaDiretores.get(b).getSalario());
 			System.out.println("AÇÕES: "+ listaDiretores.get(b).getAcoes());
 			System.out.println("SALÁRIO TOTAL: "+listaDiretores.get(b).getTotalSalario());
-			System.out.println("\n");
+			System.out.println("------------------");
+			}
 			break;
 			
 		case 2:
