@@ -17,7 +17,7 @@ public class Main {
 			Eventos evento = new Eventos();
 			SistemaEventos sisEventos = new SistemaEventos();
 			
-		System.out.println("\nBem-Vido ao sistema de Eventos!"+
+		System.out.println("\nBem-Vindo ao sistema de Eventos!"+
 		"\n1- Login"+
 		"\n2- Cadastro"+
 		"\n0- sair do sistema");
