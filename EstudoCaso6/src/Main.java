@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -6,11 +7,15 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner (System.in); 
-		
-		
+	
 		DadosClimaticos dados = new DadosClimaticos();
-		EstacaoMeteorologica estacao = new EstacaoMeteorologica();
-			
+		TelaExibicao display = new TelaExibicao ();
+		TelaCondicoesAtuais condicoes = new TelaCondicoesAtuais();
+		EstacaoMeteorologica estacao = new EstacaoMeteorologica (); 
+		
+		// ArrayList <EstacaoMeteorologica> estacao = new ArrayList(); 
+	
+
 		System.out.println("informe temp: ");
 		dados.setTemperatura(sc.nextInt()); 
 		
@@ -20,12 +25,26 @@ public class Main {
 		System.out.println("Umidade: ");
 		dados.setUmidade(sc.next());	
 		
-		
-		System.out.println("Informações registradas ");
-		dados.mostrarInformacoes();
-		
 		System.out.println("\n lallala");
 		estacao.mostrarEstacaoMeteorologica(dados);
+		
+	//////////////////////////////////	
+		
+		condicoes.setDadosEstacao(estacao);
+		
+		System.out.println(" atualizar dados:  ");
+	
+		System.out.println("temp:");
+		condicoes.getDadosEstacao().getDadosClima().setTemperatura(sc.nextInt());;
+		
+		System.out.println("umid:");
+		condicoes.getDadosEstacao().getDadosClima().setUmidade(sc.next());;
+		
+		System.out.println("press:");
+		condicoes.getDadosEstacao().getDadosClima().setPressao(sc.next());;
+		
+	//	estacao.atualizacoes(dados);
+		condicoes.atualizacoes(dados);
 		
 	}
 
