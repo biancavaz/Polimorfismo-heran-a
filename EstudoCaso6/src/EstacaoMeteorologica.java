@@ -1,7 +1,7 @@
 
 public class EstacaoMeteorologica {
 	
-	DadosClimaticos dadosClima; 
+	DadosClimaticos dadosClima = new DadosClimaticos();
 	private String nome; 
 		
 	public EstacaoMeteorologica (String nome ) {
@@ -16,7 +16,7 @@ public class EstacaoMeteorologica {
 	}
 
 	public DadosClimaticos getDadosClima() {
-		return dadosClima;
+		return this.dadosClima;
 	}
 
 	public void setDadosClima(DadosClimaticos dadosClima) {
