@@ -1,18 +1,50 @@
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class CentralDados {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		Scanner sc = new Scanner (System.in);
-		
-		int opcao, opcao2, opcao3; 
+        Random rand = new Random();
+        
+        int opcao, opcao2, opcao3; 
 		DadosClimaticos dados = new DadosClimaticos();
 		ArrayList <EstacaoMeteorologica> estacao = new ArrayList(); 
 		
+		ArrayList <TelaEstatistica> estatisticas= new ArrayList();
+
+		Scanner sc = new Scanner (System.in);
+		System.out.println("[ 0 ] para dados automaticos");
+		int x= sc.nextInt();
+		if(x==0) {
+			System.out.println("dados automaticos");
+			
+			estacao.add(new EstacaoMeteorologica("dados"));
+			estatisticas.add(new TelaEstatistica());
+
+			do {
+				double tempAleatoria = rand.nextDouble()*99;
+		        double pressAleatoria = rand.nextDouble()*99;
+		        double umidAleatoria = rand.nextDouble()*99;
+			estacao.get(0).getDadosClima().add(new DadosClimaticos());
+			estacao.get(0).getDadosClima().get(estacao.get(0).getDadosClima().size()-1).setPressao(pressAleatoria);
+			estacao.get(0).getDadosClima().get(estacao.get(0).getDadosClima().size()-1).setTemperatura(tempAleatoria);
+			estacao.get(0).getDadosClima().get(estacao.get(0).getDadosClima().size()-1).setUmidade(umidAleatoria);
+			estatisticas.get(0).setEstacao(estacao.get(0));
+
+			estatisticas.get(0).calculo();
+			estatisticas.get(0).atualizacoes();
+			sc.next();
+			
+			}while(true);
+
+					
+			
+		}
+		
+
 		estacao.add(new EstacaoMeteorologica("JARAGUA DO SUL"));
 		estacao.add(new EstacaoMeteorologica("BLUMENAU "));
 		estacao.add(new EstacaoMeteorologica("GUARAMIRIM"));
@@ -22,14 +54,9 @@ public class CentralDados {
 		///criando novo dado climatico
 		estacao.get(0).getDadosClima().add(new DadosClimaticos());
 		estacao.get(0).getDadosClima().get(0).setTemperatura(99);
-		estacao.get(0).getDadosClima().get(0).setPressao(10000);
-		estacao.get(0).getDadosClima().get(0).setUmidade(100000);
+		estacao.get(0).getDadosClima().get(0).setPressao(100);
+		estacao.get(0).getDadosClima().get(0).setUmidade(50);
 		
-		estacao.get(0).getDadosClima().add(new DadosClimaticos());
-
-		estacao.get(0).getDadosClima().get(1).setTemperatura(35.0);
-		estacao.get(0).getDadosClima().get(1).setPressao(1000);
-		estacao.get(0).getDadosClima().get(1).setUmidade(90);
 		//pegando a posição atual dele
 
 		int b = estacao.get(0).getDadosClima().size()-1;
@@ -40,14 +67,7 @@ public class CentralDados {
 		System.out.println("Umidade: " +estacao.get(0).getDadosClima().get(b).getUmidade()+ "%"+ "\n"+"---------------"+"\n");
 		
 		
-		TelaEstatistica estatisticas= new TelaEstatistica();
-		System.out.println(estacao.get(0).getDadosClima().get(0).getTemperatura());
-		System.out.println(estacao.get(0).getDadosClima().get(1).getTemperatura());
 
-		estatisticas.setEstacao(estacao.get(0));
-		estatisticas.calculo();
-		
-		System.out.println("media temp "+estatisticas.getMediaTemperatura());
 		
 		
 		// set blumenau 

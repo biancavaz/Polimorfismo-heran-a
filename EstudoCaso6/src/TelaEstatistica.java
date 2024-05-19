@@ -18,6 +18,11 @@ public class TelaEstatistica {
 		this.mediaUmidade = umid/estacao.getDadosClima().size();
 
 	}
+	public void atualizacoes ( ) {
+		System.out.println("temperatura media: " + this.mediaTemperatura);
+		System.out.println("pressão media: " + this.mediaPressao);
+		System.out.println("umidade media: " + this.mediaUmidade);
+	}
 
 	public double getMediaTemperatura() {
 		return this.mediaTemperatura;
