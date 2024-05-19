@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,27 +14,70 @@ public class CentralDados {
 		ArrayList <EstacaoMeteorologica> estacao = new ArrayList(); 
 		
 		estacao.add(new EstacaoMeteorologica("JARAGUA DO SUL"));
-		estacao.add(new EstacaoMeteorologica("Blumenau "));
-		estacao.add(new EstacaoMeteorologica("Guaramirim"));
+		estacao.add(new EstacaoMeteorologica("BLUMENAU "));
+		estacao.add(new EstacaoMeteorologica("GUARAMIRIM"));
 		
 		
 		// set jaragua do sul 
-		int b = estacao.size()-1;	
-		estacao.get(0).getDadosClima().setTemperatura(35);
-		estacao.get(1).getDadosClima().setPressao("20");
-		estacao.get(2).getDadosClima().setUmidade("24");
-	
+		///criando novo dado climatico
+		estacao.get(0).getDadosClima().add(new DadosClimaticos());
+		estacao.get(0).getDadosClima().get(0).setTemperatura(99);
+		estacao.get(0).getDadosClima().get(0).setPressao(10000);
+		estacao.get(0).getDadosClima().get(0).setUmidade(100000);
+		
+		estacao.get(0).getDadosClima().add(new DadosClimaticos());
+
+		estacao.get(0).getDadosClima().get(1).setTemperatura(35.0);
+		estacao.get(0).getDadosClima().get(1).setPressao(1000);
+		estacao.get(0).getDadosClima().get(1).setUmidade(90);
+		//pegando a posição atual dele
+
+		int b = estacao.get(0).getDadosClima().size()-1;
+
 		System.out.println(estacao.get(0).getNome());
-		System.out.println("\ntemperatura: " +estacao.get(0).getDadosClima().getTemperatura()+ "° ");
-		System.out.println("pressao: " +estacao.get(1).getDadosClima().getPressao());
-		System.out.println("Umidade: " +estacao.get(2).getDadosClima().getUmidade()+ "\n"+"---------------"+"\n");
+		System.out.println("\nTemperatura: " +estacao.get(0).getDadosClima().get(b).getTemperatura()+ "° ");
+		System.out.println("Pressao: " +estacao.get(0).getDadosClima().get(b).getPressao());
+		System.out.println("Umidade: " +estacao.get(0).getDadosClima().get(b).getUmidade()+ "%"+ "\n"+"---------------"+"\n");
+		
+		
+		TelaEstatistica estatisticas= new TelaEstatistica();
+		System.out.println(estacao.get(0).getDadosClima().get(0).getTemperatura());
+		System.out.println(estacao.get(0).getDadosClima().get(1).getTemperatura());
+
+		estatisticas.setEstacao(estacao.get(0));
+		estatisticas.calculo();
+		
+		System.out.println("media temp "+estatisticas.getMediaTemperatura());
+		
 		
 		// set blumenau 
-		int a = estacao.size()-1;
-		estacao.get(a).getDadosClima().setTemperatura(40);
+		estacao.get(1).getDadosClima().add(new DadosClimaticos());
+		//pegando a posição atual dele
+		int a = estacao.get(1).getDadosClima().size()-1;
 		
-		System.out.println(estacao.get(a).getNome());
-		System.out.println(estacao.get(a).getDadosClima().getTemperatura()+ "°");
+		estacao.get(1).getDadosClima().get(a).setTemperatura(40);
+		estacao.get(1).getDadosClima().get(a).setPressao(1010);
+		estacao.get(1).getDadosClima().get(a).setUmidade(60);
+		
+		System.out.println(estacao.get(1).getNome());
+		System.out.println("\nTemperatura: "+ estacao.get(1).getDadosClima().get(a).getTemperatura()+ "°");
+		System.out.println("Pressao: " +estacao.get(1).getDadosClima().get(a).getPressao());
+		System.out.println("Umidade: " +estacao.get(1).getDadosClima().get(a).getUmidade()+ "%"+ "\n"+"---------------"+"\n");
+		
+		// set guaramirim
+		estacao.get(2).getDadosClima().add(new DadosClimaticos());
+		//pegando a posição atual dele
+		int c = estacao.get(2).getDadosClima().size()-1;
+		estacao.get(2).getDadosClima().get(c).setTemperatura(60);
+		estacao.get(2).getDadosClima().get(c).setPressao(1020);
+		estacao.get(2).getDadosClima().get(c).setUmidade(23);
+		
+		System.out.println(estacao.get(2).getNome());
+		System.out.println("\nTemperatura: " + estacao.get(2).getDadosClima().get(c).getTemperatura()+ "°");
+		System.out.println("Pressao: " +estacao.get(2).getDadosClima().get(c).getPressao());
+		System.out.println("Umidade: " +estacao.get(2).getDadosClima().get(c).getUmidade()+ "%"+ "\n"+"---------------"+"\n");
+		
+		
 	}
 
 }

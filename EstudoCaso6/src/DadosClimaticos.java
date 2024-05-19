@@ -1,29 +1,30 @@
 
 public class DadosClimaticos {
 	
-	private int temperatura;
-	private String umidade;
-	private String pressao;
+	private double temperatura;
+	private double umidade;
+	private double pressao;
 	
 
-	public int getTemperatura() {
+	public double getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(int temperatura) {
+	public void setTemperatura(double temperatura) {
 		if (temperatura <100)
 		this.temperatura = temperatura;
 	}
-	public String getUmidade() {
+	public double getUmidade() {
 		return umidade;
 	}
-	public void setUmidade(String umidade) {
-		if (umidade.length()>0)
+	public void setUmidade(double umidade) {
+		if (umidade>0 || umidade<100)
 		this.umidade = umidade;
 	}
-	public String getPressao() {
+	public double getPressao() {
 		return pressao;
 	}
-	public void setPressao(String pressao) {
+	public void setPressao(double pressao) {
+		if ( pressao > 300 || pressao <1300)
 		this.pressao = pressao;
 	} 
 	

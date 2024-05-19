@@ -1,11 +1,14 @@
+import java.util.ArrayList;
 
 public class EstacaoMeteorologica {
 	
-	DadosClimaticos dadosClima = new DadosClimaticos();
-	private String nome; 
+	ArrayList <DadosClimaticos> dadosClima = new ArrayList();
+	private String nome;
 		
 	public EstacaoMeteorologica (String nome ) {
 		this.nome = nome;
+	}
+	public EstacaoMeteorologica () {
 	}
 	public String getNome() {
 		return nome;
@@ -15,31 +18,29 @@ public class EstacaoMeteorologica {
 		this.nome = nome;
 	}
 
-	public DadosClimaticos getDadosClima() {
+	
+
+	public ArrayList<DadosClimaticos> getDadosClima() {
 		return this.dadosClima;
 	}
-
-	public void setDadosClima(DadosClimaticos dadosClima) {
+	public void setDadosClima(ArrayList<DadosClimaticos> dadosClima) {
 		this.dadosClima = dadosClima;
 	}
 	
-	public EstacaoMeteorologica () {
-		this.dadosClima = new DadosClimaticos ();
-	} 
-
+	
 	public void mostrarEstacaoMeteorologica (DadosClimaticos dados) {
 		System.out.println(" "+ dados.dadosClima());
 	}
 	
 	
-	public void atualizacoes ( DadosClimaticos dados ) {
-		System.out.println("temperatura: " + this.dadosClima.getTemperatura());
-		System.out.println("pressão: " + this.dadosClima.getPressao());
-		System.out.println("umidade: " + this.dadosClima.getUmidade());
+	public void atualizacoe ( ) {
+		System.out.println("temperatura: " + this.dadosClima.get(dadosClima.size()-1).getTemperatura());
+		System.out.println("pressão: " + this.dadosClima.get(dadosClima.size()-1).getPressao());
+		System.out.println("umidade: " + this.dadosClima.get(dadosClima.size()-1).getUmidade());
 	}
 	
 	public String dadosClima () {
-		String dados = "temperatura : " + this.dadosClima.getTemperatura() + "\n umidade:" + this.dadosClima.getUmidade() + "\n Pressao :"+ this.dadosClima.getPressao(); 
+		String dados = "temperatura : " + this.dadosClima.get(dadosClima.size()-1).getTemperatura() + "\n umidade:" + this.dadosClima.get(dadosClima.size()-1).getUmidade() + "\n Pressao :"+ this.dadosClima.get(dadosClima.size()-1).getPressao(); 
 		return dados; 
 	}
 }
