@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class EstacaoMeteorologica {
 	
 	ArrayList <DadosClimaticos> dadosClima = new ArrayList();
+	TelaCondicoesAtuais condicoes = new TelaCondicoesAtuais ();
+	
 	private String nome;
 		
 	public EstacaoMeteorologica (String nome ) {
@@ -17,8 +19,6 @@ public class EstacaoMeteorologica {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	
 
 	public ArrayList<DadosClimaticos> getDadosClima() {
 		return this.dadosClima;
@@ -43,4 +43,14 @@ public class EstacaoMeteorologica {
 		String dados = "temperatura : " + this.dadosClima.get(dadosClima.size()-1).getTemperatura() + "\n umidade:" + this.dadosClima.get(dadosClima.size()-1).getUmidade() + "\n Pressao :"+ this.dadosClima.get(dadosClima.size()-1).getPressao(); 
 		return dados; 
 	}
+	
+	public TelaCondicoesAtuais getCondicoes() {
+		return condicoes;
+	}
+	public void setCondicoes(TelaCondicoesAtuais condicoes) {
+		
+		this.condicoes = condicoes;
+	}
+	
+	
 }

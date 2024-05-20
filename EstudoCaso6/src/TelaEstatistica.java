@@ -9,19 +9,19 @@ public class TelaEstatistica {
 	public void calculo () {
 		double temp=0,pres=0,umid=0;
 		for(int i=0; i < estacao.getDadosClima().size(); i++) {
-			temp= temp+estacao.getDadosClima().get(i).getTemperatura();
+			temp = temp+estacao.getDadosClima().get(i).getTemperatura();
 			pres = pres+estacao.getDadosClima().get(i).getPressao();
 			umid = umid+estacao.getDadosClima().get(i).getUmidade();
 		}
-		this.mediaTemperatura = temp/estacao.getDadosClima().size();
-		this.mediaPressao = pres/estacao.getDadosClima().size();
-		this.mediaUmidade = umid/estacao.getDadosClima().size();
+		this.mediaTemperatura = Math.round(temp/estacao.getDadosClima().size()*1000)/1000;
+		this.mediaPressao = Math.round(pres/estacao.getDadosClima().size()*1000)/1000;
+		this.mediaUmidade = Math.round(umid/estacao.getDadosClima().size()*1000)/1000;
 
 	}
 	public void atualizacoes ( ) {
-		System.out.println("temperatura media: " + this.mediaTemperatura);
-		System.out.println("pressão media: " + this.mediaPressao);
-		System.out.println("umidade media: " + this.mediaUmidade);
+		System.out.println("\nTemperatura Média: " + this.mediaTemperatura);
+		System.out.println("Pressão Média: " + this.mediaPressao);
+		System.out.println("Umidade Média: " + this.mediaUmidade);
 	}
 
 	public double getMediaTemperatura() {
@@ -29,7 +29,7 @@ public class TelaEstatistica {
 	}
 
 	public void setMediaTemperatura(double mediaTemperatura) {
-		this.mediaTemperatura = mediaTemperatura;
+		this.mediaTemperatura = Math.round(mediaTemperatura*100)/100;
 	}
 
 	public double getMediaPressao() {
@@ -37,7 +37,7 @@ public class TelaEstatistica {
 	}
 
 	public void setMediaPressao(double mediaPressao) {
-		this.mediaPressao = mediaPressao;
+		this.mediaPressao = Math.round(mediaPressao*100)/100;
 	}
 
 	public double getMediaUmidade() {
@@ -45,7 +45,7 @@ public class TelaEstatistica {
 	}
 
 	public void setMediaUmidade(double mediaUmidade) {
-		this.mediaUmidade = mediaUmidade;
+		this.mediaUmidade = Math.round(mediaUmidade*100)/100;
 	}
 
 	public EstacaoMeteorologica getEstacao() {
