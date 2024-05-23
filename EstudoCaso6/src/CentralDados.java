@@ -29,11 +29,13 @@ public class CentralDados {
 
 				do {
 					
+					System.out.println("\n\n\n\n");
+					
 					System.out.println("--------------");
 					System.out.println("DADOS AUTOMATICOS (MÉDIA DE DADOS): ");
 					
 					double tempAleatoria = rand.nextDouble()*99;
-			        double pressAleatoria = rand.nextDouble()*99;
+			        double pressAleatoria = rand.nextDouble()* (1300 - 300) + 300;
 			        double umidAleatoria = rand.nextDouble()*99;
 			   	
 				estacao.get(0).getDadosClima().add(new DadosClimaticos());
@@ -49,7 +51,7 @@ public class CentralDados {
 				
 				System.out.println("DADOS ATUAIS: "+ "\n");
 				estacao.get(0).getDadosClima().get(estacao.get(0).getDadosClima().size()-1).mostrarInformacoes();
-				
+		
 				Thread.sleep(5000);
 				
 				

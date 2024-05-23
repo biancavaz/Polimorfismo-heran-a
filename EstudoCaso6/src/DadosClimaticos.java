@@ -17,14 +17,14 @@ public class DadosClimaticos {
 		return umidade;
 	}
 	public void setUmidade(double umidade) {
-		if (umidade>0 || umidade<100)
+		if (umidade>0 && umidade<100)
 		this.umidade = Math.round(umidade*100)/100;
 	}
 	public double getPressao() {
 		return pressao;
 	}
 	public void setPressao(double pressao) {
-		if ( pressao > 300 || pressao <1300)
+		if ( pressao > 300 && pressao <1300)
 		this.pressao =  Math.round(pressao*100)/100;
 	} 
 	
