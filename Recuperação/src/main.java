@@ -74,9 +74,9 @@ public class main {
 			
 		case 2: 
 			
+			System.out.println("\nFILMES REGISTRADOS POR USUÁRIO \n");
 			for ( int cont=0; cont<filmesRegistradosUser.size(); cont++) {
 				
-				System.out.println("\nFILMES REGISTRADOS POR USUÁRIO \n");
 				System.out.println("\nNome do usuário: " + filmesRegistradosUser.get(cont).getNome() );
 				System.out.println("Nome do filme: "+ listaFilmes.get(cont).getTitulo());
 				System.out.println("Data de lançamento: "+ listaFilmes.get(cont).getDataLancamento());
@@ -87,9 +87,10 @@ public class main {
 		break;
 			
 		case 3: 
+			
+			System.out.println("\nFILMES REGISTRADOS");
 			for ( int cont=0; cont<listaFilmes.size(); cont++) {
-				System.out.println("\nFILMES REGISTRADOS");
-				System.out.println("Nome do filme: "+ listaFilmes.get(cont).getTitulo());
+				System.out.println("\nNome do filme: "+ listaFilmes.get(cont).getTitulo());
 				System.out.println("Data de lançamento: "+ listaFilmes.get(cont).getDataLancamento());
 				System.out.println("Diretor do Filme: "+ listaFilmes.get(cont).getDiretorFilme());
 				System.out.println("Descrição do filme: "+ listaFilmes.get(cont).getDescricao());
